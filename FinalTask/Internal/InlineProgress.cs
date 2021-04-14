@@ -3,7 +3,9 @@
 
 namespace FinalTask
 {   
-    
+        /// <summary>
+        /// Класс прогресс-бара из библиотеки YutubeExplode
+        /// </summary>
         internal class InlineProgress : IProgress<double>, IDisposable
         {
             private readonly int _posX;
