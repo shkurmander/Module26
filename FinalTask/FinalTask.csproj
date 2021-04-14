@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="commandpattern.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="YoutubeExplode" Version="5.1.9" />
+    <PackageReference Include="YoutubeExplode.Converter" Version="2.0.2" />
+  </ItemGroup>
+
+</Project>
