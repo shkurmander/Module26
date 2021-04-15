@@ -16,40 +16,27 @@ namespace FinalTask
     {
         static  async Task Main()
         {
-            var client = new YoutubeClient();
-
+            
+            //ЗАпрашиваем ссылку на видео и формируем VideoID
             Console.Write("Enter YouTube video ID or URL: ");
             var videoId = new VideoId(Console.ReadLine()!);
 
-            //var streams = await client.Videos.Streams.GetManifestAsync(videoId);
-            //var streamInfo = streams.GetMuxed().WithHighestVideoQuality();
+          
 
-            
+            //Создаем объект менеджера (Sender)
             var manager = new VideoManager(videoId);
 
+            //Создаем объекты исполнителя (Recevier)
             var videoInfo = new VideoInfo();
             var downloader = new VideoDownloader();
 
+            //Задаем команды в менеджере и передаем в них исполнителя
             manager.SetCommand(0, new VideoInfoCommand(videoInfo));
             manager.SetCommand(1, new VideoDownloaderCommand(downloader));
-
-        
+            
+            //Запускаем команды
             manager.Execute(0);
-
             manager.Execute(1);
-
-
-
-
-
-            //var fileName = $@"c:\Test\{videoId}.{streamInfo.Container.Name}";
-
-            //// Download video
-            //Console.Write($"Downloading stream: {streamInfo.VideoQualityLabel} / {streamInfo.Container.Name}... ");
-            //using (var progress = new InlineProgress())
-            //    await client.Videos.Streams.DownloadAsync(streamInfo, fileName, progress);
-
-            //Console.WriteLine($"Video saved to '{fileName}'");
 
 
             Console.ReadKey();

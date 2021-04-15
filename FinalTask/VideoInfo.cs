@@ -7,8 +7,11 @@ namespace FinalTask
 {
     class VideoInfo
     {
-        
-
+        /// <summary>
+        /// Печатает на экран информацию о видеролике
+        /// </summary>
+        /// <param name="id"> id ролика</param>
+        /// <returns></returns>
         public async Task PrintInfo(string id)
         {
             var client = new YoutubeClient();

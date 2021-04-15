@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace FinalTask
 {
+    /// <summary>
+    /// Класс менеджера команд(Sender)
+    /// </summary>
     class VideoManager
     {
         ICommand[] _commands;
@@ -32,7 +35,7 @@ namespace FinalTask
             _commands[number] = command;            
         }
         /// <summary>
-        /// метод запускает на выполнение соответвующую команду 
+        /// метод запускает на выполнение команду из массива команд, с переданным индексом number
         /// </summary>
         /// <param name="number"></param>
         public void Execute(int number)

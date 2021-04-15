@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace FinalTask
 {
+    /// <summary>
+    /// Класс команды video downloader'a
+    /// </summary>
     class VideoDownloaderCommand : ICommand
     {
         VideoDownloader _downloader;
@@ -16,7 +19,9 @@ namespace FinalTask
         }
         public void Execute(string id)
         {
-
+            // Запускаем метод чере Task, чтобы обесппечить последовательность вывода 
+            // информаци на экран, т.к. методы внутри асинхронные и могут отработать вразнобой, обеспечив "кашу" на экране.
+            
             var task = _downloader.Download(id);
             task.Wait();
             ;

@@ -9,6 +9,11 @@ namespace FinalTask
 {
     class VideoDownloader
     {
+        /// <summary>
+        /// Скачивает видео в наилучшем качестве
+        /// </summary>
+        /// <param name="videoId">id video</param>
+        /// <returns></returns>
         public async Task Download(string videoId)
         {
             var client = new YoutubeClient();                      
